@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Menu.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #f97bb0; font-weight: bold;}
+.s1 { color: #dfdfe0;}
+.s2 { color: #ff806c;}
+.s3 { color: #d7c781;}
+</style>
+</head>
+<body bgcolor="#292a30">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Menu.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">public class </span><span class="s1">Menu {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Nhập số lượng&quot;</span><span class="s1">);</span>
+        <span class="s0">int </span><span class="s1">size = scanner.nextInt();</span>
+        <span class="s1">Human[] humans = </span><span class="s0">new </span><span class="s1">Human[size];</span>
+        <span class="s1">ManagerHuman managerHuman  = </span><span class="s0">new </span><span class="s1">ManagerHuman(humans);</span>
+
+        <span class="s0">int </span><span class="s1">choice;</span>
+        <span class="s0">do </span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Menu&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;1. Tạo danh sách&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;2. Hiển thị danh sách&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;3. Thêm một người vào danh sách&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;4. Tìm vị trí một người trong danh sách&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;5. Xóa một ng trong danh sách theo mã&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;6. Sửa thông tin một ng theo mã&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;7. Sắp xếp theo điểm trung bình&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;8. Tính tổng điêm&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Nhập lựa chọn của bạn&quot;</span><span class="s1">);</span>
+            <span class="s1">choice = scanner.nextInt();</span>
+            <span class="s1">scanner.nextLine();</span>
+
+            <span class="s0">switch </span><span class="s1">(choice) {</span>
+                <span class="s0">case </span><span class="s3">1</span><span class="s1">:</span>
+                    <span class="s1">managerHuman.createHuman(</span><span class="s0">new </span><span class="s1">Student());</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+                <span class="s0">case </span><span class="s3">2</span><span class="s1">:</span>
+                    <span class="s1">managerHuman.displayName();</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+                <span class="s0">case </span><span class="s3">3</span><span class="s1">:</span>
+                    <span class="s1">managerHuman.findHuman(</span><span class="s2">&quot;ha&quot;</span><span class="s1">);</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+                <span class="s0">case </span><span class="s3">4</span><span class="s1">:</span>
+                    <span class="s1">managerHuman.deleteHuman();</span>
+                    <span class="s0">break</span><span class="s1">;</span>
+                <span class="s0">case </span><span class="s3">7</span><span class="s1">:</span>
+                    <span class="s1">managerHuman.sortHuman();</span>
+            <span class="s1">}</span>
+
+        <span class="s1">}</span><span class="s0">while </span><span class="s1">(choice!=</span><span class="s3">0</span><span class="s1">);</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
